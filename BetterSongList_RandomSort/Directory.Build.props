@@ -5,9 +5,15 @@
   <!-- Game version-dependent stuff -->
   <PropertyGroup Condition="$(Configuration) == 'Release-1.29.1' Or $(Configuration) == 'Debug-1.29.1'">
     <GameVersion>1.29.1</GameVersion>
+    
+    <BSIPAVersion>4.2.2</BSIPAVersion>
+    <BetterSongListVersion>0.3.3</BetterSongListVersion>
   </PropertyGroup>
   <PropertyGroup Condition="$(Configuration) == 'Release-1.37.1' Or $(Configuration) == 'Debug-1.37.1'">
     <GameVersion>1.37.1</GameVersion>
+
+    <BSIPAVersion>4.3.4</BSIPAVersion>
+    <BetterSongListVersion>0.4.0</BetterSongListVersion>
   </PropertyGroup>
 
   <!-- Plugin Metadata -->
@@ -15,7 +21,7 @@
     <PluginId>BetterSongList_RandomSort</PluginId>
     <PluginName>BetterSongList_RandomSort</PluginName>
     <Authors>TheBlackParrot</Authors>
-    <Version>0.0.0+$(GameVersion)</Version>
+    <Version>0.0.1+$(GameVersion)</Version>
     <Description>Adds a random/unsorted sort method for BetterSongList</Description>
     <ProjectSource>https://github.com/TheBlackParrot/BetterSongList_RandomSort</ProjectSource>
     <ProjectHome>https://github.com/TheBlackParrot/BetterSongList_RandomSort</ProjectHome>
@@ -24,8 +30,8 @@
 
   <!-- Plugin Dependencies -->
   <ItemGroup>
-    <DependsOn Include="BSIPA" Version="^4.2.2"/>
-    <DependsOn Include="BetterSongList" Version=">=0.3.3"/>
+    <DependsOn Include="BSIPA" Version="^$(BSIPAVersion)"/>
+    <DependsOn Include="BetterSongList" Version=">=$(BetterSongListVersion)"/>
   </ItemGroup>
   
   <PropertyGroup>
